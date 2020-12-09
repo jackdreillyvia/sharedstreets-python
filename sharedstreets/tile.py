@@ -147,6 +147,7 @@ def geometry_feature(geometry, metadata, id_length):
             'endIntersectionId': geometry.toIntersectionId[:id_length],
             'roadClass': geometry.roadClass,
             'osmName': str(metadata.osmMetadata.name),
+            'osmIds': [section.wayId for section in metadata.osmMetadata.waySections],
             },
         'geometry': {
             'type': 'LineString',
